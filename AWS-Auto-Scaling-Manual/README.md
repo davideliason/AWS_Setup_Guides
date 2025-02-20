@@ -1,20 +1,21 @@
-AWS Auto Scaling in Linux - Lab Guide
+**AWS Auto Scaling in Linux - Lab Guide**
 This guide explains how to use AWS Auto Scaling to create an Amazon EC2 instance and configure it to automatically scale based on demand. This lab uses AWS CLI to manage instances and deploy an Auto Scaling group.
 
-Objectives
+**Objectives**
 By the end of this lab, you will:
 
-Create an EC2 instance using AWS CLI.
-Create a new AMI for Auto Scaling.
-Configure AWS CLI.
-Create an Auto Scaling Group.
-Create and configure an Application Load Balancer.
-Test and verify the Auto Scaling configuration.
-Task 1: Creating a New AMI for EC2 Auto Scaling
+- Create an EC2 instance using AWS CLI.
+- Create a new AMI for Auto Scaling.
+- Configure AWS CLI.
+- Create an Auto Scaling Group.
+- Create and configure an Application Load Balancer.
+- Test and verify the Auto Scaling configuration.
+- Task 1: Creating a New AMI for EC2 Auto Scaling
+
 Step 1.1: Connect to the Host Instance
-Launch the AWS Management Console.
-Connect to an existing EC2 instance through EC2 Dashboard > Instances.
-Use EC2 Instance Connect to log in to the host instance.
+- Launch the AWS Management Console.
+- Connect to an existing EC2 instance through EC2 Dashboard > Instances.
+- Use EC2 Instance Connect to log in to the host instance.
 Step 1.2: Configure AWS CLI
 Run the following command to configure AWS CLI:
 aws configure
