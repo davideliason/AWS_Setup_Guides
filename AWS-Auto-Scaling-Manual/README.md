@@ -36,32 +36,39 @@ Use the following command to install required packages and set up a web server:
 
 **Create an AMI for the EC2 instance:**
 - aws ec2 create-image --instance-id <instance-id> --name "WebServer-AMI" --no-reboot
+
 **Task 2: Creating an Auto Scaling Environment**
-*Step 2.1: Create an Application Load Balancer*
+
+Step 2.1: Create an Application Load Balancer*
 - Navigate to EC2 Dashboard > Load Balancers > Create Load Balancer.
 - Choose Application Load Balancer and configure the following:
 - Availability Zones: Select two public subnets.
 - Security Group: Create a new security group with HTTP access enabled.
 - Target Group: Create a new target group for the load balancer.
-*Step 2.2: Create a Launch Template*
+
+Step 2.2: Create a Launch Template*
 - Go to EC2 Dashboard > Launch Templates > Create Launch Template.
 - Configure the launch template:
 - AMI ID: Use the AMI created in Task 1.
 - Instance Type: t2.micro
 - Security Group: Use the previously created security group.
 - Save the template.
-*Step 2.3: Create an Auto Scaling Group*
+
+Step 2.3: Create an Auto Scaling Group*
 - Go to EC2 Dashboard > Auto Scaling Groups > Create Auto Scaling Group.
 - Configure the group:
 -- Launch Template: Use the template created in Step 2.2.
 -- VPC and Subnets: Select two private subnets.
 -- Load Balancer: Attach the Application Load Balancer.
 -- Scaling Policies: Use a target tracking policy.
+
 **Task 3: Verifying and Testing the Auto Scaling Configuration**
-*Step 3.1: Verify Auto Scaling*
+
+Step 3.1: Verify Auto Scaling*
 - Monitor the status of your Auto Scaling group in the EC2 Dashboard > Instances.
 - Check that instances are launched across multiple Availability Zones.
-*Step 3.2: Test the Auto Scaling Configuration*
+
+Step 3.2: Test the Auto Scaling Configuration*
 - Simulate high CPU usage to trigger scaling:
 - sudo stress --cpu 2 --timeout 300
 - Confirm that a new instance is launched.
